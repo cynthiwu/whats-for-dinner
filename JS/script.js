@@ -15,10 +15,10 @@ $(document).ready(function() {
         // Clears search bar
         $("#form-input").val("");
     })
-
+    const ingredientListEl = $("#ingredient-list");
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
-
+        searchRecipe(ingredientListEl)
     })
 
     // function to search for a recipe using the user input
@@ -38,7 +38,6 @@ $(document).ready(function() {
         })
     }
 
-    searchRecipe("chicken");
 
 
 
