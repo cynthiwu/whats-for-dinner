@@ -9,6 +9,9 @@ $(document).ready(function() {
         let addedIngredient = $("#form-input").val();
         let ingredientListEl = $("#ingredient-list");
         let ingredientLiEl = $("<li>").text(addedIngredient);
+        let spanEl = $("<span>").text("x");
+        spanEl.addClass("close");
+        ingredientLiEl.append(spanEl);
 
         ingredientListEl.append(ingredientLiEl);
 
