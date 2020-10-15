@@ -1,0 +1,187 @@
+
+/* Header styler */ 
+.subnav-hero-section {
+    text-align: center;
+    background: #74A08F;
+    background-size: cover;
+    position: relative;
+    overflow: visible;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 200px;
+  }
+  
+  .subnav-hero-section .subnav-hero-headline {
+    color: #fefefe;
+  }
+  
+  .subnav-hero-subnav {
+    float: none;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .subnav-hero-subnav li {
+    float: none;
+    display: inline-block;
+  }
+  
+  .subnav-hero-subnav li a {
+    padding: 0.9rem 1rem;
+    font-size: 0.75rem;
+    color: #fefefe;
+    text-transform: uppercase;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.35s ease-in-out;
+  }
+  
+  .subnav-hero-subnav li a.is-active {
+    background: rgba(254, 254, 254, 0.15);
+  }
+  
+  .subnav-hero-subnav li a:hover {
+    background: rgba(254, 254, 254, 0.15);
+  }
+
+/* Search Section */ 
+
+.instructions {
+      margin-top: 75px;
+      margin-bottom: 0;
+      text-align: center;
+  }
+
+.input-group-rounded .input-group-field {
+    border-radius: 5000px 0 0 5000px;
+    padding-left: 1rem;
+    margin-top: 30px;
+    text-align:center;
+  }
+  
+  .input-group-rounded .input-group-button .button {
+    border-radius: 0 5000px 5000px 0;
+    font-size: 0.8rem;
+    margin-top: 30px;
+  }
+  
+  .search {
+      width: 400px;
+      margin-left:auto;
+      margin-right:auto;
+  }
+
+  .list {
+      list-style:none;
+      text-align:center;
+      line-height:2em;
+  }
+
+  .close {
+      cursor: pointer;
+      margin-left:5%;
+      color:#C0C0C0;
+  }
+
+  .close:hover {
+      color:#7B7474;
+  }
+
+  .button {
+      font-weight:bold;
+  }
+  /* Ingredients Card */ 
+
+  .ingredient-card {
+      width: 500px;
+      height: 400px;
+      margin-left:auto;
+      margin-right: auto;
+      margin-top: 50px;
+      padding-top:0;
+      border-radius:10px;
+      text-align:center;
+  }
+
+  .class-head {
+      text-align:center;
+      text-transform:uppercase;
+      font-weight:bold;
+      color:#74A08F;
+  }
+
+  /* Special button styling */ 
+
+  .special {
+      border-radius: 10px;
+      background-color:#AF6767;
+      height:70px;
+      width:80px;
+      padding-bottom:5px;
+      padding-top:7px;
+      margin:10px;
+  }
+
+  .special:hover {
+    background-color:#cc9c9c;
+  }
+
+  .special-div {
+      margin-left: auto;
+      margin-right: auto;
+      text-align:center;
+  }
+
+  .fas {
+      width:20px;
+      height:20px;
+  }
+
+  /* Saved Page */
+
+.saved-card {
+  width: 250px;
+  height: 300px;
+  margin: 50px;
+  padding-top:0;
+  border-radius:10px;
+  text-align:center;
+} 
+
+.saved-head {
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight:bold;
+  color:#716969
+}
+
+.card-divider {
+  display: block;
+}
+
+.cook-time {
+  font-size:12px;
+}
+
+.card-image {
+  padding:0;
+  margin:0;
+}
+
+.card-section img {
+  width:auto;
+  height:auto;
+
+}
