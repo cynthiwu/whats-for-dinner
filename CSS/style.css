@@ -67,8 +67,7 @@
     border-radius: 5000px 0 0 5000px;
     padding-left: 1rem;
     margin-top: 30px;
-
-   
+    text-align:center;
   }
   
   .input-group-rounded .input-group-button .button {
@@ -79,11 +78,31 @@
   
   .search {
       width: 400px;
-      align-items:center;
       margin-left:auto;
       margin-right:auto;
   }
 
+  .list {
+      list-style:none;
+      text-align:center;
+      line-height:2em;
+  }
+
+  .close {
+      cursor: pointer;
+      margin-left:5%;
+      color:#C0C0C0;
+  }
+
+  .close:hover {
+      color:#7B7474;
+  }
+
+
+
+  .button {
+      font-weight:bold;
+  }
   /* Ingredients Card */ 
 
   .card {
@@ -99,4 +118,34 @@
 
   .class-head {
       text-align:center;
+      text-transform:uppercase;
+      font-weight:bold;
+      color:#74A08F;
+  }
+
+  /* Special button styling */ 
+
+  .special {
+      border-radius: 10px;
+      background-color:#AF6767;
+      height:70px;
+      width:80px;
+      padding-bottom:5px;
+      padding-top:7px;
+      margin:10px;
+  }
+
+  .special:hover {
+    background-color:#cc9c9c;
+  }
+
+  .special-div {
+      margin-left: auto;
+      margin-right: auto;
+      text-align:center;
+  }
+
+  .fas {
+      width:20px;
+      height:20px;
   }
