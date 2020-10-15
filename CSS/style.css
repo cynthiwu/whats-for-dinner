@@ -98,14 +98,12 @@
       color:#7B7474;
   }
 
-
-
   .button {
       font-weight:bold;
   }
   /* Ingredients Card */ 
 
-  .card {
+  .ingredient-card {
       width: 500px;
       height: 400px;
       margin-left:auto;
@@ -149,3 +147,41 @@
       width:20px;
       height:20px;
   }
+
+  /* Saved Page */
+
+.saved-card {
+  width: 250px;
+  height: 300px;
+  margin: 50px;
+  padding-top:0;
+  border-radius:10px;
+  text-align:center;
+} 
+
+.saved-head {
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight:bold;
+  color:#716969
+}
+
+.card-divider {
+  display: block;
+}
+
+.cook-time {
+  font-size:12px;
+}
+
+.card-image {
+  padding:0;
+  margin:0;
+}
+
+.card-section img {
+  width:auto;
+  height:auto;
+
+}
