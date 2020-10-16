@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    let addIngredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
+    let ingredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
 
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
@@ -15,13 +15,26 @@ $(document).ready(function() {
 
         ingredientListEl.append(ingredientLiEl);
 
-        // Clears search bar
+        // Will push each ingredient into the ingredientsArr
+        ingredientsArr.push(addedIngredient);
+        // Will set ingredientsArr (the user's list) into localstorage
+        localStorage.setItem("ingredients-list", JSON.stringify(ingredientsArr));
+
+        console.log(ingredientsArr);
+
+        // Clears search bar 
         $("#form-input").val("");
     })
-    const ingredientListEl = $("#ingredient-list");
+
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
-        searchRecipe(ingredientListEl)
+        // location.href = "./Pages/results.html";
+
+        let ingredientSearch = localStorage.getItem("ingredients-list");
+
+        console.log(ingredientSearch);
+
+        searchRecipe(ingredientSearch);
     })
 
     // function to search for a recipe using the user input
