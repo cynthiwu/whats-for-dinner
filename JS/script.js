@@ -28,6 +28,7 @@ $(document).ready(function() {
         let ingredientLiEl = $("<li>").text(addedIngredient);
         let spanEl = $("<span>").text("x");
         spanEl.addClass("close");
+        spanEl.on("click", deleteIngredient);
         ingredientLiEl.append(spanEl);
 
         ingredientListEl.append(ingredientLiEl);
@@ -46,16 +47,32 @@ $(document).ready(function() {
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
         // Switches to results page
-        location.href = "./Pages/results.html";
 
         let ingredientSearch = localStorage.getItem("ingredients-list");
         console.log(ingredientSearch);
 
         // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
+        location.href = "./Pages/results.html";
+
     })
 
+    // Function for taco button. Conducts a search for "tacos" //
 
+      function tacoRecipe() {
+        searchRecipe("tacos");
+    }
+
+    // Function for x buttons to delete ingredient items. //
+
+    function deleteIngredient() {
+        $(this).parent().remove();
+    }
+
+    // Event Handlers - Keep all event handlers below //
+
+    $("#taco-button").on("click", tacoRecipe);
+    
 
     // GIVEN this website
     // WHEN I search using ingredients on hand
