@@ -28,12 +28,13 @@ $(document).ready(function() {
 
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
-        // location.href = "./Pages/results.html";
+        // Switches to results page
+        location.href = "./Pages/results.html";
 
         let ingredientSearch = localStorage.getItem("ingredients-list");
-
         console.log(ingredientSearch);
 
+        // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
     })
 
@@ -47,10 +48,27 @@ $(document).ready(function() {
             method: "GET"
         }).then(function(response) {
             console.log(response);
-            let recipeImg = response.hits[0].recipe.image;
-            let recipeName = response.hits[0].recipe.label;
-            let recipeLink = response.hits[0].recipe.url;
+            
+            for (let i = 0; i < 5; i++) {
+                // response calls
+                let recipeImg = response.hits[i].recipe.image;
+                let recipeName = response.hits[i].recipe.label;
+                let cookTime = response.hits[i].recipe.totalTime;
+                let servingSize = response.hits[i].recipe.yield;
+                let recipeLink = response.hits[i].recipe.url;
+    
+                // html establishment
+                let tableRowEl = $("<tr>");
+                let tableColEl = $("<td>");
+                
+                $("#table-body").append(tableRowEl);
 
+                tableRowEl.append(tableColEl).attr("src", recipeImg);
+                tableRowEl.append(tableColEl).text(recipeName);
+                tableRowEl.append(tableColEl).text(cookTime);
+                tableRowEl.append(tableColEl).text(servingSize);
+                tableRowEl.append(tableColEl).text(recipeLink);
+            }
         })
     }
 
