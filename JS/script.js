@@ -11,6 +11,7 @@ $(document).ready(function() {
             url: recipeURL,
             method: "GET"
         }).then(function(response) {
+<<<<<<< HEAD
             console.log(response);
             
             for (let i = 0; i < 5; i++) {
@@ -34,6 +35,13 @@ $(document).ready(function() {
 
                 $("#table-body").append(tableRowEl);
             }
+=======
+            // console.log(response);
+            console.log(response.hits);
+
+            // Set results to local storage
+            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 5)));
+>>>>>>> develop
         })
     }
 
@@ -97,5 +105,4 @@ $(document).ready(function() {
 
     // WHEN I don’t have an ingredient
     // THEN I can add it to a shopping list
-
 })
