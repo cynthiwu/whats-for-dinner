@@ -11,27 +11,11 @@ $(document).ready(function() {
             url: recipeURL,
             method: "GET"
         }).then(function(response) {
-            console.log(response);
-            
-            for (let i = 0; i < 5; i++) {
-                // response calls
-                let recipeImg = $("<td>").append("<img>").attr("src", response.hits[i].recipe.image);
-                let recipeName = $("<td>").text(response.hits[i].recipe.label);
-                let cookTime = $("<td>").text(response.hits[i].recipe.totalTime);
-                let servingSize = $("<td>").text(response.hits[i].recipe.yield);
-                let recipeLink = $("<td>").text(response.hits[i].recipe.url);
-    
-                // html establishment
-                let tableRowEl = $("<tr>");
-                
-                $("#table-body").append(tableRowEl);
+            // console.log(response);
+            console.log(response.hits);
 
-                tableRowEl.append(recipeImg);
-                tableRowEl.append(recipeName);
-                tableRowEl.append(cookTime);
-                tableRowEl.append(servingSize);
-                tableRowEl.append(recipeLink);
-            }
+            // Set results to local storage
+            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 5)));
         })
     }
 
@@ -44,6 +28,7 @@ $(document).ready(function() {
         let ingredientLiEl = $("<li>").text(addedIngredient);
         let spanEl = $("<span>").text("x");
         spanEl.addClass("close");
+        spanEl.on("click", deleteIngredient);
         ingredientLiEl.append(spanEl);
 
         ingredientListEl.append(ingredientLiEl);
@@ -62,13 +47,14 @@ $(document).ready(function() {
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
         // Switches to results page
-        location.href = "./Pages/results.html";
 
         let ingredientSearch = localStorage.getItem("ingredients-list");
         console.log(ingredientSearch);
 
         // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
+        location.href = "./Pages/results.html";
+
     })
 
 //  function randomRecipe(){
@@ -85,6 +71,22 @@ $(document).ready(function() {
      console.log(randomIndex);
  })
  
+    // Function for taco button. Conducts a search for "tacos" //
+
+      function tacoRecipe() {
+        searchRecipe("tacos");
+    }
+
+    // Function for x buttons to delete ingredient items. //
+
+    function deleteIngredient() {
+        $(this).parent().remove();
+    }
+
+    // Event Handlers - Keep all event handlers below //
+
+    $("#taco-button").on("click", tacoRecipe);
+    
 
     // GIVEN this website
     // WHEN I search using ingredients on hand
@@ -107,5 +109,4 @@ $(document).ready(function() {
 
     // WHEN I don’t have an ingredient
     // THEN I can add it to a shopping list
-
 })
