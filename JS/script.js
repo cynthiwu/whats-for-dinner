@@ -71,7 +71,20 @@ $(document).ready(function() {
         searchRecipe(ingredientSearch);
     })
 
-
+//  function randomRecipe(){
+//      let ranArr = ["chicken", "pork", "potatoes","asparagus"];
+//      var randomIndex = Math.floor(Math.random(ranArr.length));
+//      ranArr[randomIndex];
+//  }
+ 
+ $("#dice-button").on("click", function() {
+    let ranArr = ["chicken", "pork", "potatoes","asparagus","beef", "shrimp", "seafood", "pasta","fruit", "vegetables", "fish", "apples", "rice","vegetarian","vegan","greens"];
+    var randomIndex = ranArr[Math.floor(Math.random()*ranArr.length)];
+    ranArr[randomIndex];
+     searchRecipe(randomIndex);
+     console.log(randomIndex);
+ })
+ 
 
     // GIVEN this website
     // WHEN I search using ingredients on hand
