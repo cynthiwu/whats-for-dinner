@@ -2,6 +2,39 @@ $(document).ready(function() {
 
     let ingredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
 
+    // function to search for a recipe using the user input
+    function searchRecipe(input) {
+        let apiKey = "5d5d79c2c0msh5d8b76850693b7ep1e1c05jsn7b1b3e77821b";
+        let recipeURL = "https://edamam-recipe-search.p.rapidapi.com/search?q=" + input + "&rapidapi-key=" + apiKey;
+
+        $.ajax({
+            url: recipeURL,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            
+            for (let i = 0; i < 5; i++) {
+                // response calls
+                let recipeImg = $("<td>").append("<img>").attr("src", response.hits[i].recipe.image);
+                let recipeName = $("<td>").text(response.hits[i].recipe.label);
+                let cookTime = $("<td>").text(response.hits[i].recipe.totalTime);
+                let servingSize = $("<td>").text(response.hits[i].recipe.yield);
+                let recipeLink = $("<td>").text(response.hits[i].recipe.url);
+    
+                // html establishment
+                let tableRowEl = $("<tr>");
+                
+                $("#table-body").append(tableRowEl);
+
+                tableRowEl.append(recipeImg);
+                tableRowEl.append(recipeName);
+                tableRowEl.append(cookTime);
+                tableRowEl.append(servingSize);
+                tableRowEl.append(recipeLink);
+            }
+        })
+    }
+
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
         event.preventDefault();
@@ -25,7 +58,7 @@ $(document).ready(function() {
         // Clears search bar 
         $("#form-input").val("");
     })
-
+    
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
         // Switches to results page
@@ -37,42 +70,6 @@ $(document).ready(function() {
         // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
     })
-
-    // function to search for a recipe using the user input
-    function searchRecipe(input) {
-        let apiKey = "5d5d79c2c0msh5d8b76850693b7ep1e1c05jsn7b1b3e77821b";
-        let recipeURL = "https://edamam-recipe-search.p.rapidapi.com/search?q=" + input + "&rapidapi-key=" + apiKey;
-
-        $.ajax({
-            url: recipeURL,
-            method: "GET"
-        }).then(function(response) {
-            console.log(response);
-            
-            for (let i = 0; i < 5; i++) {
-                // response calls
-                let recipeImg = response.hits[i].recipe.image;
-                let recipeName = response.hits[i].recipe.label;
-                let cookTime = response.hits[i].recipe.totalTime;
-                let servingSize = response.hits[i].recipe.yield;
-                let recipeLink = response.hits[i].recipe.url;
-    
-                // html establishment
-                let tableRowEl = $("<tr>");
-                let tableColEl = $("<td>");
-                
-                $("#table-body").append(tableRowEl);
-
-                tableRowEl.append(tableColEl).attr("src", recipeImg);
-                tableRowEl.append(tableColEl).text(recipeName);
-                tableRowEl.append(tableColEl).text(cookTime);
-                tableRowEl.append(tableColEl).text(servingSize);
-                tableRowEl.append(tableColEl).text(recipeLink);
-            }
-        })
-    }
-
-
 
 
 
