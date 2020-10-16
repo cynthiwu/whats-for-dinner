@@ -23,14 +23,16 @@ $(document).ready(function() {
     
                 // html establishment
                 let tableRowEl = $("<tr>");
+                console.log("I am here")
                 
-                $("#table-body").append(tableRowEl);
 
                 tableRowEl.append(recipeImg);
                 tableRowEl.append(recipeName);
                 tableRowEl.append(cookTime);
                 tableRowEl.append(servingSize);
                 tableRowEl.append(recipeLink);
+
+                $("#table-body").append(tableRowEl);
             }
         })
     }
@@ -69,6 +71,7 @@ $(document).ready(function() {
 
         // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
+        
     })
 
 
