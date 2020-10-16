@@ -11,37 +11,11 @@ $(document).ready(function() {
             url: recipeURL,
             method: "GET"
         }).then(function(response) {
-<<<<<<< HEAD
-            console.log(response);
-            
-            for (let i = 0; i < 5; i++) {
-                // response calls
-                let recipeImg = $("<td>").append("<img>").attr("src", response.hits[i].recipe.image);
-                let recipeName = $("<td>").text(response.hits[i].recipe.label);
-                let cookTime = $("<td>").text(response.hits[i].recipe.totalTime);
-                let servingSize = $("<td>").text(response.hits[i].recipe.yield);
-                let recipeLink = $("<td>").text(response.hits[i].recipe.url);
-    
-                // html establishment
-                let tableRowEl = $("<tr>");
-                console.log("I am here")
-                
-
-                tableRowEl.append(recipeImg);
-                tableRowEl.append(recipeName);
-                tableRowEl.append(cookTime);
-                tableRowEl.append(servingSize);
-                tableRowEl.append(recipeLink);
-
-                $("#table-body").append(tableRowEl);
-            }
-=======
             // console.log(response);
             console.log(response.hits);
 
             // Set results to local storage
             localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 5)));
->>>>>>> develop
         })
     }
 
