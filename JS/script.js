@@ -68,6 +68,7 @@ $(document).ready(function() {
     var randomIndex = ranArr[Math.floor(Math.random()*ranArr.length)];
     ranArr[randomIndex];
      searchRecipe(randomIndex);
+     location.href = "./Pages/results.html";
      console.log(randomIndex);
  })
  
@@ -75,6 +76,7 @@ $(document).ready(function() {
 
       function tacoRecipe() {
         searchRecipe("tacos");
+        location.href = "./Pages/results.html";
     }
 
     // Function for x buttons to delete ingredient items. //
