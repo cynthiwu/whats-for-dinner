@@ -28,6 +28,7 @@ $(document).ready(function() {
         let ingredientLiEl = $("<li>").text(addedIngredient);
         let spanEl = $("<span>").text("x");
         spanEl.addClass("close");
+        spanEl.on("click", deleteIngredient);
         ingredientLiEl.append(spanEl);
 
         ingredientListEl.append(ingredientLiEl);
@@ -46,17 +47,52 @@ $(document).ready(function() {
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
         // Switches to results page
-        location.href = "./Pages/results.html";
 
         let ingredientSearch = localStorage.getItem("ingredients-list");
         console.log(ingredientSearch);
 
         // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
+<<<<<<< HEAD
         
+=======
+        location.href = "./Pages/results.html";
+
+>>>>>>> develop
     })
 
+//  function randomRecipe(){
+//      let ranArr = ["chicken", "pork", "potatoes","asparagus"];
+//      var randomIndex = Math.floor(Math.random(ranArr.length));
+//      ranArr[randomIndex];
+//  }
+ 
+ $("#dice-button").on("click", function() {
+    let ranArr = ["chicken", "pork", "potatoes","asparagus","beef", "shrimp", "seafood", "pasta","fruit", "vegetables", "fish", "apples", "rice","vegetarian","vegan","greens"];
+    var randomIndex = ranArr[Math.floor(Math.random()*ranArr.length)];
+    ranArr[randomIndex];
+     searchRecipe(randomIndex);
+     location.href = "./Pages/results.html";
+     console.log(randomIndex);
+ })
+ 
+    // Function for taco button. Conducts a search for "tacos" //
 
+      function tacoRecipe() {
+        searchRecipe("tacos");
+        location.href = "./Pages/results.html";
+    }
+
+    // Function for x buttons to delete ingredient items. //
+
+    function deleteIngredient() {
+        $(this).parent().remove();
+    }
+
+    // Event Handlers - Keep all event handlers below //
+
+    $("#taco-button").on("click", tacoRecipe);
+    
 
     // GIVEN this website
     // WHEN I search using ingredients on hand
