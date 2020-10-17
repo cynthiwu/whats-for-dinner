@@ -15,6 +15,7 @@ $(document).ready(function() {
             let recipeLink = $("<a>").attr("href", recipesArr[i].recipe.url).attr("target", "_blank").html(recipesArr[i].recipe.url);
             let linkEl = $("<td>").append(recipeLink);
             let saveBtnEl = $("<td>").attr("type", "button").attr("class", "primary button").text("Save");
+            saveBtnEl.on("click", saveRecipe);
 
             console.log(recipesArr[i].recipe.url);
 
@@ -29,8 +30,10 @@ $(document).ready(function() {
             tableRowEl.append(servingSize);
             tableRowEl.append(linkEl);
             tableRowEl.append(saveBtnEl);
+            
 
             console.log("working");
         }
     }
+
 })

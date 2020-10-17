@@ -21,6 +21,7 @@ $(document).ready(function() {
     
     function deleteCard() {
         $(this).parent().parent().parent().remove();
+        // Need code to delete this from local storage. 
     }
 
     createCard(testArray);
@@ -32,22 +33,30 @@ $(document).ready(function() {
         console.log(array.img); 
 
         let cardLink = $("<a>").attr({href: array.url, target: "_blank"});
+        
         let outerDiv = $("<div>").addClass("card saved-card");
         cardLink.append(outerDiv);
+       
         let innerDiv = $("<div>").addClass("card-divider");
         outerDiv.append(innerDiv);
+        
         let title = $("<h6>").addClass("saved-head");
         title.text(array.label);
         innerDiv.append(title);
+        
         let close = $("<span>").addClass("card-close").text("x");
         innerDiv.append(close);
+        
         let time = $("<p>").addClass("cook-time").text(array.totalTime + ": min");
         innerDiv.append(time);
+        
         let pdf = $("<img>").attr({src: "../Assets/pdf.png", alt: "PDF icon", target: "_blank"});
         pdf.addClass("pdf-button");
         innerDiv.append(pdf);
+        
         let imageSection = $("<div>").addClass("card-section card-image");
         outerDiv.append(imageSection);
+        
         let image = $("<img>").attr({src: array.img, alt:"Recipe photo"});
         imageSection.append(image);
 
@@ -80,7 +89,7 @@ $(document).ready(function() {
         //     console.log(response);
         // })
 
-    }
+    };
     
 
     
