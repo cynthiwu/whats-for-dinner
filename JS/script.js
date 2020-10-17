@@ -73,11 +73,6 @@ $(document).ready(function() {
         // location.href = "./Pages/results.html";
     })
 
-//  function randomRecipe(){
-//      let ranArr = ["chicken", "pork", "potatoes","asparagus"];
-//      var randomIndex = Math.floor(Math.random(ranArr.length));
-//      ranArr[randomIndex];
-//  }
  
     // Event Handlers - Keep all event handlers below //
     $("#taco-button").on("click", tacoRecipe);
