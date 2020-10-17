@@ -9,7 +9,7 @@ $(document).ready(function() {
         label: "Poop Tacos",
         totalTime: "20",
         img: "https://www.edamam.com/web-img/32d/32da8c201c42d8aae7a7f51449c83e2a.jpg",
-        url: "https://www.google.com/",
+        url: "http://www.google.com/",
         },
         {
         label: "Crisp Tacos Picadillo",
@@ -43,7 +43,7 @@ $(document).ready(function() {
         innerDiv.append(close);
         let time = $("<p>").addClass("cook-time").text(array.totalTime + ": min");
         innerDiv.append(time);
-        let pdf = $("<img>").attr({src: "../Assets/pdf.png", alt: "PDF icon"});
+        let pdf = $("<img>").attr({src: "../Assets/pdf.png", alt: "PDF icon", target: "_blank"});
         pdf.addClass("pdf-button");
         innerDiv.append(pdf);
         let imageSection = $("<div>").addClass("card-section card-image");
@@ -51,19 +51,40 @@ $(document).ready(function() {
         let image = $("<img>").attr({src: array.img, alt:"Recipe photo"});
         imageSection.append(image);
 
+        close.click(function(e){
+            e.preventDefault();
+         });
+        pdf.click(function(e){
+            e.preventDefault();
+         });
+
         $("#save-section").append(cardLink);
 
         });
 
     };
 
+    function convertPDF() {
 
+        let recipeurl = $(this).closest("a").attr("href");
+        console.log(recipeurl);
+        let documentName = $(this).siblings("h6").text();
+        console.log(documentName);
+        let pdfurl = "http://api.pdflayer.com/api/convert?access_key=fc89c18463a3601f09f7161ad08a5e5b&document_url=" + recipeurl + "&document_name=" + documentName + "&test=1";
 
+        window.open(pdfurl, '_blank');
+        // $.ajax({
+        //     url: "http://api.pdflayer.com/api/convert?access_key=fc89c18463a3601f09f7161ad08a5e5b&document_url=" + recipeurl + "&document_name=" + documentName + "&test=1",
+        //     method: "GET",
+        // }).then(function(response) {
+        //     console.log(response);
+        // })
+
+    }
     
-    
-    
+
     
     $(".card-close").on("click", deleteCard);
-    
+    $(".pdf-button").on("click", convertPDF);
     
     });
