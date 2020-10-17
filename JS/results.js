@@ -12,7 +12,7 @@ $(document).ready(function() {
             let imageEl = $("<td>").append(recipeImg);
             imageEl.addClass("imageRow");
             let recipeName = $("<td>").text(recipesArr[i].recipe.label);
-            recipeName.addClass("label");
+            recipeName.addClass("recipeTitle");
             let cookTime = $("<td>").text(recipesArr[i].recipe.totalTime);
             cookTime.addClass("cooktime")
             if (recipesArr[i].recipe.totalTime === 0) {
@@ -48,7 +48,7 @@ $(document).ready(function() {
     const savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
 
     function saveRecipe() {
-        let title = $(this).siblings(".label").text();
+        let title = $(this).siblings(".recipeTitle").text();
         let time = $(this).siblings(".cooktime").text();
         let image = $(this).siblings(".imageRow").find(".thumbnail").attr("src");
         let link = $(this).siblings(".linkRow").find(".recipeLink").attr("href");
