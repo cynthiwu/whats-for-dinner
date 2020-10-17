@@ -19,7 +19,7 @@ $(document).ready(function() {
             console.log(response.hits);
 
             // Set results to local storage
-            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 5)));
+            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0,10)));
         })
     }
 
@@ -42,11 +42,9 @@ $(document).ready(function() {
         //         console.log(clearIngred);
         //         console.log("Hello");
         //     }
-        }
- 
         $(this).parent().remove();  
     }
-    
+
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
         event.preventDefault();
