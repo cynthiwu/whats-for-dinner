@@ -234,3 +234,9 @@ transition: all .2s ease-in-out;
 color:#7B7474;
 transform: scale(1.3); 
 }
+
+.myfixed {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}

@@ -19,7 +19,7 @@ $(document).ready(function() {
             console.log(response.hits);
 
             // Set results to local storage
-            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 10)));
+            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 5)));
         })
     }
 
@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 
     }
-
+    
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
         event.preventDefault();
@@ -60,15 +60,14 @@ $(document).ready(function() {
         // Clears search bar 
         $("#form-input").val("");
     })
+   
     
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
         let ingredientSearch = localStorage.getItem("ingredients-list");
         console.log(ingredientSearch);
 
-     // Run searchRecipe function for items in ingredients list
-       
-     
+        // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
 
         // Switches to results page
