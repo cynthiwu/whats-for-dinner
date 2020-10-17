@@ -25,9 +25,20 @@ $(document).ready(function() {
 
     // Function for x buttons to delete ingredient items. //
     function deleteIngredient() {
-        $(this).parent().remove();
+        // let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
+        // let searchTitle =  $(this).parent().text();
+        // console.log(ingredientLiEl.attr("data-label"));
+        // console.log(clearIngred);
+        // for (let i=0; i < clearIngred.length; i++) {
+        //     if (searchTitle === clearIngred[i]){
+        //         clearIngred.splice(i,1);
+        //         localStorage.setItem("ingredients-list", JSON.stringify(clearIngred));
+        //         console.log(clearIngred);
+        //         console.log("Hello");
+        //     }
+        $(this).parent().remove();  
     }
-    
+
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
         event.preventDefault();
@@ -35,7 +46,8 @@ $(document).ready(function() {
         let addedIngredient = $("#form-input").val();
         let ingredientListEl = $("#ingredient-list");
         let ingredientLiEl = $("<li>").text(addedIngredient);
-        let spanEl = $("<span>").text("x").attr("id", addedIngredient);
+        ingredientLiEl.attr("data-label",addedIngredient);
+        let spanEl = $("<span>").text("x");
         spanEl.addClass("close");
         spanEl.on("click", deleteIngredient);
         ingredientLiEl.append(spanEl);
@@ -51,6 +63,8 @@ $(document).ready(function() {
 
         // Clears search bar 
         $("#form-input").val("");
+      
+       
     })
    
     
