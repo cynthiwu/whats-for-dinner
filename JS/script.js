@@ -51,14 +51,11 @@ $(document).ready(function() {
         let ingredientSearch = localStorage.getItem("ingredients-list");
         console.log(ingredientSearch);
 
-        // Run searchRecipe function for items in ingredients list
+     // Run searchRecipe function for items in ingredients list
+       
+     
         searchRecipe(ingredientSearch);
-<<<<<<< HEAD
-        
-=======
         location.href = "./Pages/results.html";
-
->>>>>>> develop
     })
 
 //  function randomRecipe(){
