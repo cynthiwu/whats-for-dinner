@@ -1,30 +1,30 @@
 $(document).ready(function() {
 
-    //Call to get local storage. 
+    const savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
     
     // Testing object //
     
-    const testArray = [
-        {
-        label: "Poop Tacos",
-        totalTime: "20",
-        img: "https://www.edamam.com/web-img/32d/32da8c201c42d8aae7a7f51449c83e2a.jpg",
-        url: "http://www.google.com/",
-        },
-        {
-        label: "Crisp Tacos Picadillo",
-        totalTime: "60",
-        img: "https://www.edamam.com/web-img/32d/32da8c201c42d8aae7a7f51449c83e2a.jpg",
-        url: "http://www.lottieanddoof.com/2009/07/picadillo/",
-        },
-    ]
+    // const testArray = [
+    //     {
+    //     label: "Poop Tacos",
+    //     totalTime: "20",
+    //     img: "https://www.edamam.com/web-img/32d/32da8c201c42d8aae7a7f51449c83e2a.jpg",
+    //     url: "http://www.google.com/",
+    //     },
+    //     {
+    //     label: "Crisp Tacos Picadillo",
+    //     totalTime: "60",
+    //     img: "https://www.edamam.com/web-img/32d/32da8c201c42d8aae7a7f51449c83e2a.jpg",
+    //     url: "http://www.lottieanddoof.com/2009/07/picadillo/",
+    //     },
+    // ]
     
     function deleteCard() {
         $(this).parent().parent().parent().remove();
         // Need code to delete this from local storage. 
     }
 
-    createCard(testArray);
+    createCard(savedArr);
     
     function createCard(array) {
         $.each(array, function(index, array) {
