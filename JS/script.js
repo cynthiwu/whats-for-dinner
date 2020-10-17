@@ -19,7 +19,7 @@ $(document).ready(function() {
             console.log(response.hits);
 
             // Set results to local storage
-            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 5)));
+            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 10)));
         })
     }
 
@@ -64,7 +64,9 @@ $(document).ready(function() {
         let ingredientSearch = localStorage.getItem("ingredients-list");
         console.log(ingredientSearch);
 
-        // Run searchRecipe function for items in ingredients list
+     // Run searchRecipe function for items in ingredients list
+       
+     
         searchRecipe(ingredientSearch);
 
         // Switches to results page
