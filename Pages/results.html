@@ -4,36 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search Results</title>
    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../CSS/style.css"/>   
-
 </head>
 
 <body>
+    <!-- Page Header -->
     <header class="subnav-hero-section">
         <h1 class="ubnav-hero-headline">Results</h1>
-        
+        <ul class="subnav-hero-subnav">
+            <li><a href="../index.html">Search by ingredients</a></li>
+            <li><a href="../Pages/saved.html">Saved Searches</a></li>
+        </ul>
     </header>  
     
     <!-- Table to display the results -->
     <table class="results">
         <thead>
             <tr>
-                <th width="250">Picture of food</th>
-                <th width="150">Food Name</th>
-                <th>Food Description</th>
-                <th width="150">Link</th>
+                <th width="250"></th>
+                <th width="150">Recipe</th>
                 <th width="100">Total Time</th>
-                <th width="100"># of people served</th>
-                <th width="125">Save?</th>
+                <th width="100">Serves</th>
+                <!-- <th>Food Description</th> -->
+                <th width="150">Link</th>
+                <th width="125">Save Recipe</th>
             </tr>
         </thead>
        
         <tbody class="stack hover" id="table-body">
         <!-- first result on the table -->   
-            <tr id="first-result">
+            <!-- <tr id="first-result">
                 <td>
                     <img class="thumbnail"
                         src="https://d1e3z2jco40k3v.cloudfront.net/-/media/mccormick-us/recipes/mccormick/f/2000/fiesta_tacos_2000x1125.jpg?vd=20200628T025153Z&hash=A2C8763288A24F1992E0407B5394E310"
@@ -68,7 +71,7 @@
                 <td>Amazing pasta</td>
                 <td id="third-link" src=""></td>
                 <td type="button" class="primary button">Save</td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
     <hr>
