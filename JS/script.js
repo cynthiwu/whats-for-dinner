@@ -41,7 +41,7 @@ $(document).ready(function() {
         let addedIngredient = $("#form-input").val();
         let ingredientListEl = $("#ingredient-list");
         let ingredientLiEl = $("<li>").text(addedIngredient);
-        let spanEl = $("<span>").text("x");
+        let spanEl = $("<span>").text("x").attr("id", addedIngredient);
         spanEl.addClass("close");
         spanEl.on("click", deleteIngredient);
         ingredientLiEl.append(spanEl);
