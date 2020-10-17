@@ -1,8 +1,9 @@
 $(document).ready(function() {
 
-    let ingredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
+    // let ingredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
+    let ingredientsArr = [];
 
-    // function to search for a recipe using the user input
+    // Function to search for a recipe using the user input
     function searchRecipe(input) {
         let apiKey = "5d5d79c2c0msh5d8b76850693b7ep1e1c05jsn7b1b3e77821b";
         let recipeURL = "https://edamam-recipe-search.p.rapidapi.com/search?q=" + input + "&rapidapi-key=" + apiKey;
@@ -11,12 +12,26 @@ $(document).ready(function() {
             url: recipeURL,
             method: "GET"
         }).then(function(response) {
-            // console.log(response);
+            // Switches to results page
+            location.href = "./Pages/results.html";
+
+            console.log(response);
             console.log(response.hits);
 
             // Set results to local storage
             localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 5)));
         })
+    }
+
+    // Function for taco button. Conducts a search for "tacos" //
+    function tacoRecipe() {
+        searchRecipe("tacos");
+        // location.href = "./Pages/results.html";
+    }
+
+    // Function for x buttons to delete ingredient items. //
+    function deleteIngredient() {
+        $(this).parent().remove();
     }
 
     // Takes user input ingredient and puts it into an unordered list
@@ -46,8 +61,6 @@ $(document).ready(function() {
     
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
-        // Switches to results page
-
         let ingredientSearch = localStorage.getItem("ingredients-list");
         console.log(ingredientSearch);
 
@@ -55,7 +68,9 @@ $(document).ready(function() {
        
      
         searchRecipe(ingredientSearch);
-        location.href = "./Pages/results.html";
+
+        // Switches to results page
+        // location.href = "./Pages/results.html";
     })
 
 //  function randomRecipe(){
@@ -64,32 +79,24 @@ $(document).ready(function() {
 //      ranArr[randomIndex];
 //  }
  
- $("#dice-button").on("click", function() {
-    let ranArr = ["chicken", "pork", "potatoes","asparagus","beef", "shrimp", "seafood", "pasta","fruit", "vegetables", "fish", "apples", "rice","vegetarian","vegan","greens"];
-    var randomIndex = ranArr[Math.floor(Math.random()*ranArr.length)];
-    ranArr[randomIndex];
-     searchRecipe(randomIndex);
-     location.href = "./Pages/results.html";
-     console.log(randomIndex);
- })
- 
-    // Function for taco button. Conducts a search for "tacos" //
-
-      function tacoRecipe() {
-        searchRecipe("tacos");
-        location.href = "./Pages/results.html";
-    }
-
-    // Function for x buttons to delete ingredient items. //
-
-    function deleteIngredient() {
-        $(this).parent().remove();
-    }
-
     // Event Handlers - Keep all event handlers below //
-
     $("#taco-button").on("click", tacoRecipe);
+
+    // On click to find random recipe using the searchRecipe function
+    $("#dice-button").on("click", function() {
+        let ranArr = ["chicken", "pork", "potatoes","asparagus","beef", "shrimp", "seafood", "pasta","fruit", "vegetables", "fish", "apples", "rice","vegetarian","vegan","greens"];
+        let randomIndex = ranArr[Math.floor(Math.random()*ranArr.length)];
+        ranArr[randomIndex];
+        searchRecipe(randomIndex);
+        // location.href = "./Pages/results.html";
+        console.log(randomIndex);
+    })
+ 
+
     
+
+
+
 
     // GIVEN this website
     // WHEN I search using ingredients on hand
