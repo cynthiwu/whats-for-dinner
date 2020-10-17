@@ -32,6 +32,8 @@ $(document).ready(function() {
     // Function for x buttons to delete ingredient items. //
     function deleteIngredient() {
         $(this).parent().remove();
+
+
     }
 
     // Takes user input ingredient and puts it into an unordered list

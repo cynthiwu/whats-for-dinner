@@ -8,6 +8,7 @@ $(document).ready(function() {
         for (let i = 0; i < recipesArr.length; i++) {
             // response calls
             let recipeImg = $("<img>").attr("src", recipesArr[i].recipe.image).addClass("thumbnail");
+           
             let imageEl = $("<td>").append(recipeImg);
             imageEl.addClass("imageRow");
             let recipeName = $("<td>").text(recipesArr[i].recipe.label);
