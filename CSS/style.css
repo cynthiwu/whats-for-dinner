@@ -112,6 +112,17 @@
 .button {
     font-weight:bold;
 }
+
+.switch-group {
+  display: flex;
+  justify-content: center;
+}
+
+.switch-label {
+  width: 10%;
+  text-align: center;
+}
+
 /* Ingredients Card */ 
 
 .ingredient-card {
@@ -119,7 +130,7 @@
     height: 400px;
     margin-left:auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 10px;
     padding-top:0;
     border-radius:10px;
     text-align:center;

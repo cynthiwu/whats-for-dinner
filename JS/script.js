@@ -19,16 +19,10 @@ $(document).ready(function() {
             console.log(response.hits);
 
             // Set results to local storage
-            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0,10)));
+            localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 10)));
         })
     }
 
-    // Function for taco button. Conducts a search for "tacos" //
-    function tacoRecipe() {
-        searchRecipe("tacos");
-        // location.href = "./Pages/results.html";
-    }
-   
     // Function for x buttons to delete ingredient items. //
     function deleteIngredient() {
         // let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
@@ -87,12 +81,19 @@ $(document).ready(function() {
     })
 
  
-    // Event Handlers - Keep all event handlers below //
-    $("#taco-button").on("click", tacoRecipe);
+    // On click to find random "taco tuesday" recipe using the searchRecipe function
+    $("#taco-button").on("click", function(){
+        let tacoArr = ["tacos", "quesadilla", "enchilada", "tostada", "horchata", "huevos rancheros", "churros", "tamales", "mole", "barbacoa", "carnitas", "poblano", "fajitas", "burritos", "nachos"];
+        let randomTacoIndex = tacoArr[Math.floor(Math.random()*tacoArr.length)];
+        tacoArr[randomTacoIndex];
+        searchRecipe(randomTacoIndex);
+        // location.href = "./Pages/results.html";
+        console.log(randomTacoIndex);
+    });
 
     // On click to find random recipe using the searchRecipe function
     $("#dice-button").on("click", function() {
-        let ranArr = ["chicken", "pork", "potatoes","asparagus","beef", "shrimp", "seafood", "pasta","fruit", "vegetables", "fish", "apples", "rice","vegetarian","vegan","greens"];
+        let ranArr = ["chicken", "pork", "potatoes", "asparagus", "beef", "shrimp", "seafood", "pasta", "fruit", "vegetables", "fish", "apples", "rice", "vegetarian", "vegan", "greens", "eggs"];
         let randomIndex = ranArr[Math.floor(Math.random()*ranArr.length)];
         ranArr[randomIndex];
         searchRecipe(randomIndex);
