@@ -14,6 +14,9 @@ $(document).ready(function() {
             recipeName.addClass("label");
             let cookTime = $("<td>").text(recipesArr[i].recipe.totalTime);
             cookTime.addClass("cooktime")
+            if (recipesArr[i].recipe.totalTime === 0) {
+                cookTime.text("N/A");
+            }
             let servingSize = $("<td>").text(recipesArr[i].recipe.yield);
             let recipeLink = $("<a>").attr("href", recipesArr[i].recipe.url).attr("target", "_blank").html(recipesArr[i].recipe.url);
             recipeLink.addClass("recipeLink");
