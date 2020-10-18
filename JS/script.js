@@ -26,7 +26,7 @@ $(document).ready(function() {
     // Function for x buttons to delete ingredient items. //
     function deleteIngredient() {
         let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
-        let searchTitle =  $(this).parent().attr("data-label");
+        let searchTitle = $(this).parent().attr("data-label");
         
         for (let i=0; i < clearIngred.length; i++) {
             if (searchTitle === clearIngred[i]) {
@@ -36,9 +36,10 @@ $(document).ready(function() {
                 console.log("Hello");
             }
 
-        $(this).parent().remove();  
+            $(this).parent().remove();  
         }   
     }
+
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
         event.preventDefault();
@@ -63,11 +64,48 @@ $(document).ready(function() {
 
         // Clears search bar 
         $("#form-input").val("");
-      
-       
+    })
+
+    $(".switch-input").on("click", function(event) {
+        // Will show true or false
+        let userChoice = $(this)[0].checked;
+        console.log(userChoice);
+
+        // Takes the id of the switch
+        let dietaryChoice = $(this).attr("id");
+        console.log(dietaryChoice);
+
+        // If user chooses Yes
+        if (userChoice) {
+            console.log("yes");
+
+            // // Adds id to the ingredientsArr
+            ingredientsArr.push(dietaryChoice);
+
+            // // Will set ingredientsArr (the user's list) into localstorage
+            localStorage.setItem("ingredients-list", JSON.stringify(ingredientsArr));
+
+            console.log(ingredientsArr);
+
+        // If user chooses No
+        } else {
+            console.log("no");
+
+            // Takes the array out of local storage
+            let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
+            
+            // Looks for the id of the switch and removes and resets localstorage
+            for (let i=0; i < clearIngred.length; i++) {
+                if (dietaryChoice === clearIngred[i]) {
+                    clearIngred.splice(i,1);
+                    localStorage.setItem("ingredients-list", JSON.stringify(clearIngred));
+                    console.log(clearIngred);
+                    console.log("Hello");
+                }
+            }  
+        }
     })
    
-    
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
         let ingredientSearch = localStorage.getItem("ingredients-list");
@@ -80,10 +118,9 @@ $(document).ready(function() {
         // location.href = "./Pages/results.html";
     })
 
- 
     // On click to find random "taco tuesday" recipe using the searchRecipe function
     $("#taco-button").on("click", function(){
-        let tacoArr = ["tacos", "quesadilla", "enchilada", "tostada", "horchata", "huevos rancheros", "churros", "tamales", "mole", "barbacoa", "carnitas", "poblano", "fajitas", "burritos", "nachos"];
+        let tacoArr = ["tacos", "quesadilla", "enchilada", "tostada", "horchata", "huevos rancheros", "churros", "tamales", "mole", "barbacoa", "carnitas", "poblano", "fajitas", "burritos", "nachos", "taquito"];
         let randomTacoIndex = tacoArr[Math.floor(Math.random()*tacoArr.length)];
         tacoArr[randomTacoIndex];
         searchRecipe(randomTacoIndex);
