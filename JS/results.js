@@ -25,6 +25,9 @@ $(document).ready(function() {
             linkEl.addClass("linkRow");
             let saveBtnEl = $("<td>").attr("type", "button").attr("class", "primary button save").text("Save");
             saveBtnEl.on("click", saveRecipe);
+            saveBtnEl.on("click", function(){
+                $(saveBtnEl).attr("class", "saved").text("Saved");
+            });
 
             console.log(recipesArr[i].recipe.url);
 
@@ -46,7 +49,7 @@ $(document).ready(function() {
     }
 
     const savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
-
+// function called from save button click from saveBtnEl
     function saveRecipe() {
         let title = $(this).siblings(".recipeTitle").text();
         let time = $(this).siblings(".cooktime").text();
@@ -60,7 +63,6 @@ $(document).ready(function() {
         
         savedArr.push({label: title, totalTime: time, img: image, url: link});
         localStorage.setItem("saved-recipes", JSON.stringify(savedArr));
-
         console.log(savedArr);
     }
 
