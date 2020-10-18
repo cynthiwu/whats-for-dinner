@@ -21,11 +21,11 @@ $(document).ready(function() {
             // Set results to local storage
             localStorage.setItem("recipes-list", JSON.stringify(response.hits.splice(0, 10)));
         })
-    }
+    };
 
     // Function for x buttons to delete ingredient items. //
     function deleteIngredient() {
-        let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
+        let clearIngred = JSON.parse(localStorage.getItem("ingredients-list") || []);
         let searchTitle = $(this).parent().attr("data-label");
         
         for (let i=0; i < clearIngred.length; i++) {
@@ -44,7 +44,7 @@ $(document).ready(function() {
     $("#add-button").on("click", function(event) {
         
         let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list"));
-        event.preventDefault();
+        event.preventDefault() || [];
         
         let addedIngredient = $("#form-input").val();
         let ingredientListEl = $("#ingredient-list");
@@ -67,11 +67,11 @@ $(document).ready(function() {
 
         // Clears search bar 
         $("#form-input").val("");
-    })
+    });
 
     $(".switch-input").on("change", function(event) {
 
-        let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list"));
+        let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list")) || [];
         // Will show true or false
         let userChoice = $(this)[0].checked;
         console.log(userChoice);
@@ -97,7 +97,7 @@ $(document).ready(function() {
             console.log("no");
 
             // Takes the array out of local storage
-            let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
+            let clearIngred = JSON.parse(localStorage.getItem("ingredients-list") || []);
             
             // Looks for the id of the switch and removes and resets local storage
             for (let i=0; i < clearIngred.length; i++) {
@@ -109,7 +109,7 @@ $(document).ready(function() {
                 }
             }  
         }
-    })
+    });
    
     // on click to take ingredient list set to local storage than pull that out to run in the searchRecipe function?
     $("#search-button").on("click", function() {
@@ -118,7 +118,7 @@ $(document).ready(function() {
 
         // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
-    })
+    });
 
     // On click to find random "taco tuesday" recipe using the searchRecipe function
     $("#taco-button").on("click", function(){
@@ -138,7 +138,7 @@ $(document).ready(function() {
         searchRecipe(randomIndex);
         
         console.log(randomIndex);
-    })
+    });
 
     // GIVEN this website
     // WHEN I search using ingredients on hand
