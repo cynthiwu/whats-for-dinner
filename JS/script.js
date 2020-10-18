@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // let ingredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
-    let ingredientsArr = [];
+    let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list"))|| [];
 
     // Function to search for a recipe using the user input
     function searchRecipe(input) {
@@ -25,20 +25,20 @@ $(document).ready(function() {
 
     // Function for x buttons to delete ingredient items. //
     function deleteIngredient() {
-        // let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
-        // let searchTitle =  $(this).parent().text();
-        // console.log(ingredientLiEl.attr("data-label"));
-        // console.log(clearIngred);
-        // for (let i=0; i < clearIngred.length; i++) {
-        //     if (searchTitle === clearIngred[i]){
-        //         clearIngred.splice(i,1);
-        //         localStorage.setItem("ingredients-list", JSON.stringify(clearIngred));
-        //         console.log(clearIngred);
-        //         console.log("Hello");
-        //     }
-        $(this).parent().remove();  
-    }
+        let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
+        let searchTitle =  $(this).parent().attr("data-label");
+        
+        for (let i=0; i < clearIngred.length; i++) {
+            if (searchTitle === clearIngred[i]) {
+                clearIngred.splice(i,1);
+                localStorage.setItem("ingredients-list", JSON.stringify(clearIngred));
+                console.log(clearIngred);
+                console.log("Hello");
+            }
 
+        $(this).parent().remove();  
+        }   
+    }
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
         event.preventDefault();
