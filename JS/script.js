@@ -139,12 +139,6 @@ $(document).ready(function() {
         // location.href = "./Pages/results.html";
         console.log(randomIndex);
     })
- 
-
-    
-
-
-
 
     // GIVEN this website
     // WHEN I search using ingredients on hand
