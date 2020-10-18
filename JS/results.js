@@ -6,7 +6,7 @@ $(document).ready(function() {
     if (recipesArr) {
 
         for (let i = 0; i < recipesArr.length; i++) {
-            // response calls
+            // Takes information from the response and populates in a table on the results page
             let recipeImg = $("<img>").attr("src", recipesArr[i].recipe.image).addClass("thumbnail");
            
             let imageEl = $("<td>").append(recipeImg);
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
             console.log(recipesArr[i].recipe.url);
 
-            // html establishment
+            // Establish results table
             let tableRowEl = $("<tr>");
             
             $("#table-body").append(tableRowEl);
@@ -42,14 +42,14 @@ $(document).ready(function() {
             tableRowEl.append(servingSize);
             tableRowEl.append(linkEl);
             tableRowEl.append(saveBtnEl);
-            
 
             console.log("working");
         }
     }
 
     const savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
-// function called from save button click from saveBtnEl
+    
+    // Function to save the recipe
     function saveRecipe() {
         let title = $(this).siblings(".recipeTitle").text();
         let time = $(this).siblings(".cooktime").text();
@@ -65,6 +65,7 @@ $(document).ready(function() {
         localStorage.setItem("saved-recipes", JSON.stringify(savedArr));
         console.log(savedArr);
     }
+<<<<<<< HEAD
 
     $(".clear-button").on("click", function() {
 
@@ -73,4 +74,6 @@ $(document).ready(function() {
     });
 
 
+=======
+>>>>>>> origin/develop
 })
