@@ -126,6 +126,14 @@
   font-size:13px;
 }
 
+.switch-paddle {
+  border-radius: 5000px;
+}
+
+.switch-paddle::after {
+  border-radius: 5000px;
+}
+
 /* Ingredients Card */ 
 
 .ingredient-card {
