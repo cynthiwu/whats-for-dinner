@@ -65,4 +65,15 @@ $(document).ready(function() {
         localStorage.setItem("saved-recipes", JSON.stringify(savedArr));
         console.log(savedArr);
     }
+<<<<<<< HEAD
+
+    $(".clear-button").on("click", function() {
+
+        location.href = "../index.html";
+       
+    });
+
+
+=======
+>>>>>>> origin/develop
 })
