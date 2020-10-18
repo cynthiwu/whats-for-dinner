@@ -66,4 +66,11 @@ $(document).ready(function() {
         console.log(savedArr);
     }
 
+    $(".clear-button").on("click", function() {
+
+        location.href = "../index.html";
+       
+    });
+
+
 })
