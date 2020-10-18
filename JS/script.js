@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-    // let ingredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
     let ingredientsArr = [];
     localStorage.setItem("ingredients-list", JSON.stringify(ingredientsArr));
 
@@ -71,7 +70,7 @@ $(document).ready(function() {
     })
 
     $(".switch-input").on("change", function(event) {
-        
+
         let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list"));
         // Will show true or false
         let userChoice = $(this)[0].checked;
@@ -119,9 +118,6 @@ $(document).ready(function() {
 
         // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
-
-        // Switches to results page
-        // location.href = "./Pages/results.html";
     })
 
     // On click to find random "taco tuesday" recipe using the searchRecipe function
@@ -130,7 +126,7 @@ $(document).ready(function() {
         let randomTacoIndex = tacoArr[Math.floor(Math.random()*tacoArr.length)];
         tacoArr[randomTacoIndex];
         searchRecipe(randomTacoIndex);
-        // location.href = "./Pages/results.html";
+        
         console.log(randomTacoIndex);
     });
 
@@ -140,7 +136,7 @@ $(document).ready(function() {
         let randomIndex = ranArr[Math.floor(Math.random()*ranArr.length)];
         ranArr[randomIndex];
         searchRecipe(randomIndex);
-        // location.href = "./Pages/results.html";
+        
         console.log(randomIndex);
     })
 
