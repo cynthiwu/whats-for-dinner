@@ -65,7 +65,6 @@ $(document).ready(function() {
         localStorage.setItem("saved-recipes", JSON.stringify(savedArr));
         console.log(savedArr);
     }
-<<<<<<< HEAD
 
     $(".clear-button").on("click", function() {
 
@@ -74,6 +73,4 @@ $(document).ready(function() {
     });
 
 
-=======
->>>>>>> origin/develop
 })
