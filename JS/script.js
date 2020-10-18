@@ -49,6 +49,7 @@ $(document).ready(function() {
         let ingredientListEl = $("#ingredient-list");
         let ingredientLiEl = $("<li>").text(addedIngredient);
         ingredientLiEl.attr("data-label",addedIngredient);
+        // Adds an x to the li and delete function
         let spanEl = $("<span>").text("x");
         spanEl.addClass("close");
         spanEl.on("click", deleteIngredient);

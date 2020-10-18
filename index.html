@@ -12,111 +12,111 @@
 <body>
     <!--Page Header-->
     <header class="subnav-hero-section">
-        <h1 class="subnav-hero-headline">What's for Dinner...?</h1>
-        <ul class="subnav-hero-subnav">
-          <li><a href="#" class="is-active">Search by ingredients</a></li>
-          <li><a href="./Pages/saved.html">Saved Searches</a></li>
-        </ul>
+      <h1 class="subnav-hero-headline">What's for Dinner...?</h1>
+      <ul class="subnav-hero-subnav">
+        <li><a href="#" class="is-active">Search by ingredients</a></li>
+        <li><a href="./Pages/saved.html">Saved Searches</a></li>
+      </ul>
     </header>
       
-      <!--Main search bar to add ingredients-->
-      <section>
-        <div>
-            <p class="instructions">Add to your list of ingredients below. Once you're ready to search, click the search button to see your recipe results!</p>
-        </div>
-        <div class="search">
-          <div class="input-group input-group-rounded">
-              <input id="form-input" class="input-group-field" type="search" placeholder="Enter ingredient">
-              <div class="input-group-button">
-                <button id="add-button" type="submit" class="button secondary" value="Add">Add</button>
-              </div>
+    <!--Main search bar to add ingredients-->
+    <section>
+      <div>
+        <p class="instructions">Add to your list of ingredients below. Once you're ready to search, click the search button to see your recipe results!</p>
+      </div>
+      <div class="search">
+        <div class="input-group input-group-rounded">
+          <input id="form-input" class="input-group-field" type="search" placeholder="Enter ingredient">
+          <div class="input-group-button">
+            <button id="add-button" type="submit" class="button secondary" value="Add">Add</button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!--Toggle switches for user's diet-->
-        <div class="switch-group">
-          <!-- Vegetarian -->
-          <div class="switch-label">Vegetarian?
-            <div class="switch small">
-              <input class="switch-input" id="vegetarian" type="checkbox" name="vegetarian">
-              <label class="switch-paddle" for="vegetarian">
-                <span class="show-for-sr">Vegetarian</span>
-                <span class="switch-active" aria-hidden="true">Yes</span>
-                <span class="switch-inactive" aria-hidden="true">No</span>
-              </label>
-            </div>
-          </div>
-          <!-- Vegan -->
-          <div class="switch-label">Vegan?
-            <div class="switch small">
-              <input class="switch-input" id="vegan" type="checkbox" name="vegan">
-              <label class="switch-paddle" for="vegan">
-                <span class="show-for-sr">Vegan</span>
-                <span class="switch-active" aria-hidden="true">Yes</span>
-                <span class="switch-inactive" aria-hidden="true">No</span>
-              </label>
-            </div>
-          </div>
-          <!-- Dairy free -->
-          <div class="switch-label">Dairy free?
-            <div class="switch small">
-              <input class="switch-input" id="dairy-free" type="checkbox" name="dairy-free">
-              <label class="switch-paddle" for="dairy-free">
-                <span class="show-for-sr">Dairy free</span>
-                <span class="switch-active" aria-hidden="true">Yes</span>
-                <span class="switch-inactive" aria-hidden="true">No</span>
-              </label>
-            </div>
-          </div>
-          <!-- Gluten free -->
-          <div class="switch-label">Gluten free?
-            <div class="switch small">
-              <input class="switch-input" id="gluten-free" type="checkbox" name="gluten-free">
-              <label class="switch-paddle" for="gluten-free">
-                <span class="show-for-sr">Gluten free</span>
-                <span class="switch-active" aria-hidden="true">Yes</span>
-                <span class="switch-inactive" aria-hidden="true">No</span>
-              </label>
-            </div>
-          </div>
-          <!-- Diabetic -->
-          <div class="switch-label">Diabetic?
-            <div class="switch small">
-              <input class="switch-input" id="diabetic" type="checkbox" name="diabetic">
-              <label class="switch-paddle" for="diabetic">
-                <span class="show-for-sr">Diabetic</span>
-                <span class="switch-active" aria-hidden="true">Yes</span>
-                <span class="switch-inactive" aria-hidden="true">No</span>
-              </label>
-            </div>
-          </div>
+    <!--Toggle switches for user's diet-->
+    <div class="switch-group">
+      <!-- Vegetarian -->
+      <div class="switch-label">Vegetarian?
+        <div class="switch small">
+          <input class="switch-input" id="vegetarian" type="checkbox" name="vegetarian">
+          <label class="switch-paddle" for="vegetarian">
+            <span class="show-for-sr">Vegetarian</span>
+            <span class="switch-active" aria-hidden="true">Yes</span>
+            <span class="switch-inactive" aria-hidden="true">No</span>
+          </label>
         </div>
-      
-
-      <!--Dynamically created ingredient list-->
-      <section class="flex">
-        <div class="card ingredient-card">
-            <div class="card-section">
-                <h6 class="class-head">Ingredient List</h6>
-                <hr>
-                <ul id="ingredient-list" class="list">
-                    <!--Add dynamically created list items here-->
-                </ul>
-            </div>
-            <button id="search-button" type="button" class="secondary button">Search</button>
+      </div>
+      <!-- Vegan -->
+      <div class="switch-label">Vegan?
+        <div class="switch small">
+          <input class="switch-input" id="vegan" type="checkbox" name="vegan">
+          <label class="switch-paddle" for="vegan">
+            <span class="show-for-sr">Vegan</span>
+            <span class="switch-active" aria-hidden="true">Yes</span>
+            <span class="switch-inactive" aria-hidden="true">No</span>
+          </label>
         </div>
-      </section>
-
-      <div class="special-div">
-          <button id="taco-button" type="button" class="button special"><img src="Assets/taco.png"></button>  
-          <button id="dice-button" type="button" class="button special"><img src="Assets/dice.png"></button> 
-      </div>    
+      </div>
+      <!-- Dairy free -->
+      <div class="switch-label">Dairy free?
+        <div class="switch small">
+          <input class="switch-input" id="dairy-free" type="checkbox" name="dairy-free">
+          <label class="switch-paddle" for="dairy-free">
+            <span class="show-for-sr">Dairy free</span>
+            <span class="switch-active" aria-hidden="true">Yes</span>
+            <span class="switch-inactive" aria-hidden="true">No</span>
+          </label>
+        </div>
+      </div>
+      <!-- Gluten free -->
+      <div class="switch-label">Gluten free?
+        <div class="switch small">
+          <input class="switch-input" id="gluten-free" type="checkbox" name="gluten-free">
+          <label class="switch-paddle" for="gluten-free">
+            <span class="show-for-sr">Gluten free</span>
+            <span class="switch-active" aria-hidden="true">Yes</span>
+            <span class="switch-inactive" aria-hidden="true">No</span>
+          </label>
+        </div>
+      </div>
+      <!-- Diabetic -->
+      <div class="switch-label">Diabetic?
+        <div class="switch small">
+          <input class="switch-input" id="diabetic" type="checkbox" name="diabetic">
+          <label class="switch-paddle" for="diabetic">
+            <span class="show-for-sr">Diabetic</span>
+            <span class="switch-active" aria-hidden="true">Yes</span>
+            <span class="switch-inactive" aria-hidden="true">No</span>
+          </label>
+        </div>
+      </div>
+    </div>
     
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script src="./JS/script.js"></script>
+    <!--Dynamically created ingredient list-->
+    <section class="flex">
+      <div class="card ingredient-card">
+        <div class="card-section">
+          <h6 class="class-head">Ingredient List</h6>
+            <hr>
+            <ul id="ingredient-list" class="list">
+              <!--Add dynamically created list items here-->
+            </ul>
+        </div>
+        <button id="search-button" type="button" class="secondary button">Search</button>
+      </div>
+    </section>
+
+    <!-- Buttons at the bottom for Tacos and Random -->
+    <div class="special-div">
+      <button id="taco-button" type="button" class="button special"><img src="Assets/taco.png"></button>  
+      <button id="dice-button" type="button" class="button special"><img src="Assets/dice.png"></button> 
+    </div>    
+    
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <script src="./JS/script.js"></script>
     
 </body>
 </html>
