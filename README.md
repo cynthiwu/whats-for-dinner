@@ -20,7 +20,13 @@ View it live on [github-pages](https://cynthiwu.github.io/whats-for-dinner/)
 The goal of this project was to create an application that will lift some of the burden of deciding what to make for dinner. The "What's for Dinner?" application allows the user to search for online recipes based on ingredients he/she may have on-hand. Additionally, users will have the option to save recipes for future use, which can easily be converted to a PDF to be used offline, or for the more tangible owners of the printer, printed out on paper. 
 <hr>
 
-![Project Snapshot](./Assets/preview.png)
+![Search Page Preview](./Assets/index.png)
+<br>
+
+![Results Page Preview](./Assets/results.png)
+<br>
+
+![Saved Page Preview](./Assets/saved.png)
 
 <hr>
 
@@ -70,7 +76,6 @@ Watch the gif below to see how the quiz works.
 
 ![What's for Dinner? Demo](./Assets/whatsfordinner.gif)
 
-
 ## Built With
 
 This project was built using:
@@ -82,13 +87,11 @@ This project was built using:
 * HTML
 * CSS
 
-
 ## Contact
 
-Amber Swartz - [@ASwartz14](https://github.com/ASwartz14)
-Cynthia Wu - [@cynthia21wu](https://github.com/cynthiwu)
-Ian Wren - [@luckyian](https://github.com/luckyian)
-Nicole Marshall - [@ncmarsh](https://github.com/ncmarsh)
-
+* Amber Swartz - [@ASwartz14](https://github.com/ASwartz14)
+* Cynthia Wu - [@cynthia21wu](https://github.com/cynthiwu)
+* Ian Wren - [@luckyian](https://github.com/luckyian)
+* Nicole Marshall - [@ncmarsh](https://github.com/ncmarsh)
 
 **Project Link:** [https://github.com/cynthiwu/whats-for-dinner](https://github.com/cynthiwu/whats-for-dinner)
