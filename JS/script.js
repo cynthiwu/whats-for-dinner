@@ -136,12 +136,6 @@ $(document).ready(function() {
         
         console.log(randomIndex);
     })
- 
-
-    
-
-
-
 
     // GIVEN this website
     // WHEN I search using ingredients on hand
