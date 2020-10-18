@@ -116,11 +116,14 @@
 .switch-group {
   display: flex;
   justify-content: center;
+  padding-top:20px;
+  padding-bottom:20px;
 }
 
 .switch-label {
-  width: 10%;
+  width: 100px;
   text-align: center;
+  font-size:13px;
 }
 
 /* Ingredients Card */ 
