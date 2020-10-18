@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-    // let ingredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
     let ingredientsArr = [];
     localStorage.setItem("ingredients-list", JSON.stringify(ingredientsArr));
 
@@ -43,6 +42,8 @@ $(document).ready(function() {
 
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
+        
+        let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list"));
         event.preventDefault();
         
         let addedIngredient = $("#form-input").val();
@@ -68,7 +69,9 @@ $(document).ready(function() {
         $("#form-input").val("");
     })
 
-    $(".switch-input").on("click", function(event) {
+    $(".switch-input").on("change", function(event) {
+
+        let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list"));
         // Will show true or false
         let userChoice = $(this)[0].checked;
         console.log(userChoice);
@@ -96,7 +99,7 @@ $(document).ready(function() {
             // Takes the array out of local storage
             let clearIngred = JSON.parse(localStorage.getItem("ingredients-list")|| []);
             
-            // Looks for the id of the switch and removes and resets localstorage
+            // Looks for the id of the switch and removes and resets local storage
             for (let i=0; i < clearIngred.length; i++) {
                 if (dietaryChoice === clearIngred[i]) {
                     clearIngred.splice(i,1);
