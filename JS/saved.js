@@ -1,27 +1,21 @@
 $(document).ready(function() {
 
-    const savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
+    let savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
     
-    // Testing object //
-    
-    // const testArray = [
-    //     {
-    //     label: "Poop Tacos",
-    //     totalTime: "20",
-    //     img: "https://www.edamam.com/web-img/32d/32da8c201c42d8aae7a7f51449c83e2a.jpg",
-    //     url: "http://www.google.com/",
-    //     },
-    //     {
-    //     label: "Crisp Tacos Picadillo",
-    //     totalTime: "60",
-    //     img: "https://www.edamam.com/web-img/32d/32da8c201c42d8aae7a7f51449c83e2a.jpg",
-    //     url: "http://www.lottieanddoof.com/2009/07/picadillo/",
-    //     },
-    // ]
-    
+
     function deleteCard() {
-        $(this).parent().parent().parent().remove();
-        // Need code to delete this from local storage. 
+        let storedRecipes = JSON.parse(localStorage.getItem("saved-recipes")) || [];
+        let linkData = $(this).parent().parent().parent();
+        for (let i = 0; i < storedRecipes.length; i++) {
+
+            if (linkData.attr("data-label") === storedRecipes[i].label) {
+                storedRecipes.splice(i, 1);
+                console.log(storedRecipes);
+                localStorage.setItem("saved-recipes", JSON.stringify(storedRecipes));
+            }
+        }
+        console.log(linkData.attr("data-label"));
+        linkData.remove();
     }
 
     createCard(savedArr);
@@ -43,11 +37,13 @@ $(document).ready(function() {
         let title = $("<h6>").addClass("saved-head");
         title.text(array.label);
         innerDiv.append(title);
+        // cardLink.attr(`data-${array.label}`);
+        cardLink.attr("data-label", array.label);
         
         let close = $("<span>").addClass("card-close").text("x");
         innerDiv.append(close);
         
-        let time = $("<p>").addClass("cook-time").text(array.totalTime + ": min");
+        let time = $("<p>").addClass("cook-time").text("Time: " + array.totalTime + " min");
         innerDiv.append(time);
         
         let pdf = $("<img>").attr({src: "../Assets/pdf.png", alt: "PDF icon", target: "_blank"});
@@ -82,13 +78,6 @@ $(document).ready(function() {
         let pdfurl = "http://api.pdflayer.com/api/convert?access_key=fc89c18463a3601f09f7161ad08a5e5b&document_url=" + recipeurl + "&document_name=" + documentName + "&test=1";
 
         window.open(pdfurl, '_blank');
-        // $.ajax({
-        //     url: "http://api.pdflayer.com/api/convert?access_key=fc89c18463a3601f09f7161ad08a5e5b&document_url=" + recipeurl + "&document_name=" + documentName + "&test=1",
-        //     method: "GET",
-        // }).then(function(response) {
-        //     console.log(response);
-        // })
-
     };
     
 
