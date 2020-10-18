@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // let ingredientsArr = JSON.parse(localStorage.getItem("add-ingredients")) || [];
-    let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list"))|| [];
+    let ingredientsArr = [];
 
     // Function to search for a recipe using the user input
     function searchRecipe(input) {
