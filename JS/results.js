@@ -19,11 +19,11 @@ $(document).ready(function() {
                 cookTime.text("N/A");
             }
             let servingSize = $("<td>").text(recipesArr[i].recipe.yield);
-            let recipeLink = $("<a>").attr("href", recipesArr[i].recipe.url).attr("target", "_blank").html(recipesArr[i].recipe.url);
+            let recipeLink = $("<a>").attr("href", recipesArr[i].recipe.url).attr("target", "_blank").html(recipesArr[i].recipe.source + " : " + recipesArr[i].recipe.label);
             recipeLink.addClass("recipeLink");
             let linkEl = $("<td>").append(recipeLink);
             linkEl.addClass("linkRow");
-            let saveBtnEl = $("<td>").attr("type", "button").attr("class", "primary button").text("Save");
+            let saveBtnEl = $("<td>").attr("type", "button").attr("class", "primary button save").text("Save");
             saveBtnEl.on("click", saveRecipe);
 
             console.log(recipesArr[i].recipe.url);
