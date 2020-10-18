@@ -1,4 +1,3 @@
-
 /* Header styler */ 
 .subnav-hero-section {
   text-align: center;
@@ -58,9 +57,9 @@
 /* Search Section */ 
 
 .instructions {
-    margin-top: 75px;
-    margin-bottom: 0;
-    text-align: center;
+  margin-top: 75px;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .input-group-rounded .input-group-field {
@@ -77,9 +76,9 @@
 }
 
 .search {
-    width: 400px;
-    margin-left:auto;
-    margin-right:auto;
+  width: 400px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .flex {
@@ -91,26 +90,25 @@
 }
 
 .list {
-    list-style:none;
-    text-align:center;
-    line-height:2em;
+  list-style:none;
+  text-align:center;
+  line-height:2em;
 }
 
 .close {
-    cursor: pointer;
-    margin-left:5%;
-    color:#C0C0C0;
-    transition: all .2s ease-in-out; 
-
+  cursor: pointer;
+  margin-left:5%;
+  color:#C0C0C0;
+  transition: all .2s ease-in-out; 
 }
 
 .close:hover {
-    color:#7B7474;
-    transform: scale(1.3); 
+  color:#7B7474;
+  transform: scale(1.3); 
 }
 
 .button {
-    font-weight:bold;
+  font-weight:bold;
 }
 
 .switch-group {
@@ -137,35 +135,34 @@
 /* Ingredients Card */ 
 
 .ingredient-card {
-    width: 500px;
-    height: 400px;
-    margin-left:auto;
-    margin-right: auto;
-    margin-top: 10px;
-    padding-top:0;
-    border-radius:10px;
-    text-align:center;
+  width: 500px;
+  height: 400px;
+  margin-left:auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding-top:0;
+  border-radius:10px;
+  text-align:center;
 }
 
 .class-head {
-    text-align:center;
-    text-transform:uppercase;
-    font-weight:bold;
-    color:#74A08F;
+  text-align:center;
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#74A08F;
 }
 
 /* Special button styling */ 
 
 .special {
-    border-radius: 10px;
-    background-color:#AF6767;
-    height:70px;
-    width:80px;
-    padding-bottom:5px;
-    padding-top:7px;
-    margin:10px;
-    transition: all .2s ease-in-out; 
-
+  border-radius: 10px;
+  background-color:#AF6767;
+  height:70px;
+  width:80px;
+  padding-bottom:5px;
+  padding-top:7px;
+  margin:10px;
+  transition: all .2s ease-in-out; 
 }
 
 .special:hover {
@@ -174,63 +171,62 @@
 }
 
 .special-div {
-    margin-left: auto;
-    margin-right: auto;
-    text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
 }
 
 .fas {
-    width:20px;
-    height:20px;
+  width:20px;
+  height:20px;
 }
 
 /* Saved Page */
 
 .saved-card {
-width: 250px;
-height: 300px;
-margin-top: 30px;
-margin-left: 15px;
-padding-top:0;
-border-radius:10px;
-text-align:center;
-cursor: pointer;
-transition: all .2s ease-in-out; 
-float:left;
+  width: 250px;
+  height: 300px;
+  margin-top: 30px;
+  margin-left: 15px;
+  padding-top:0;
+  border-radius:10px;
+  text-align:center;
+  cursor: pointer;
+  transition: all .2s ease-in-out; 
+  float:left;
 } 
 
 .saved-card:hover {
-transform: scale(1.1); 
+  transform: scale(1.1); 
 }
 
 .saved-head {
-text-align:center;
-margin-left: auto;
-margin-right: auto;
-font-weight:bold;
-color:#716969
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight:bold;
+  color:#716969
 }
 
 .card-divider {
-display: block;
-position: relative;
+  display: block;
+  position: relative;
 }
 
 .cook-time {
-font-size:12px;
-margin-bottom:2px;
+  font-size:12px;
+  margin-bottom:2px;
 }
 
 .card-image {
-padding:0;
-margin:0;
+  padding:0;
+  margin:0;
 }
 
 .card-section img {
-width:auto;
-height:auto;
-position:relative;
-
+  width:auto;
+  height:auto;
+  position:relative;
 }
 
 .pdf-button {
@@ -246,18 +242,18 @@ position:relative;
 }
 
 .card-close {
-position: absolute;
-right:10px;
-top:5px;
-transition: all .2s ease-in-out; 
+  position: absolute;
+  right:10px;
+  top:5px;
+  transition: all .2s ease-in-out; 
 }
 
 .card-close:hover {
-color:#7B7474;
-transform: scale(1.3); 
+  color:#7B7474;
+  transform: scale(1.3); 
 }
 
-/* Styling to get the header on the results table to follow down th page as the user scrolls */
+/* Styling to get the header on the results table to follow down the page as the user scrolls */
 
 .myfixed {
   position: sticky;
@@ -268,17 +264,11 @@ transform: scale(1.3);
 
 /* Styling to get the save button on the results page to lay closer to the bottom of the row in the table */
 .save {
-  
   margin-top: 75%;
-
-
 }
 
 .saved {
-
   background-color: lightgreen;
   color: #fefefe;
   text-align: center;
-
-
 }

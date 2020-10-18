@@ -2,7 +2,6 @@ $(document).ready(function() {
 
     let savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
     
-
     function deleteCard() {
         let storedRecipes = JSON.parse(localStorage.getItem("saved-recipes")) || [];
         let linkData = $(this).parent().parent().parent();
@@ -58,19 +57,17 @@ $(document).ready(function() {
 
         close.click(function(e){
             e.preventDefault();
-         });
+        });
+        
         pdf.click(function(e){
             e.preventDefault();
-         });
-
-        $("#save-section").append(cardLink);
-
         });
 
+        $("#save-section").append(cardLink);
+        });
     };
 
     function convertPDF() {
-
         let recipeurl = $(this).closest("a").attr("href");
         console.log(recipeurl);
         let documentName = $(this).siblings("h6").text();
@@ -80,9 +77,6 @@ $(document).ready(function() {
         window.open(pdfurl, '_blank');
     };
     
-
-    
     $(".card-close").on("click", deleteCard);
     $(".pdf-button").on("click", convertPDF);
-    
-    });
+});
