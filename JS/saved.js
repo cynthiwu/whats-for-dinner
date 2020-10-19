@@ -2,11 +2,13 @@ $(document).ready(function() {
 
     let savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
     
+    // Function to delete card once close button is clicked.//
+
     function deleteCard() {
         let storedRecipes = JSON.parse(localStorage.getItem("saved-recipes")) || [];
         let linkData = $(this).parent().parent().parent();
-        for (let i = 0; i < storedRecipes.length; i++) {
 
+        for (let i = 0; i < storedRecipes.length; i++) {
             if (linkData.attr("data-label") === storedRecipes[i].label) {
                 storedRecipes.splice(i, 1);
                 console.log(storedRecipes);

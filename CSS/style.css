@@ -34,15 +34,17 @@
 .logo-left {
   display: inline-block;
   height:50%;
-  margin-right: 100px;
+  margin-right: 3rem;
   padding:0;
+  margin-bottom:20px;
 }
 
 .logo-right {
   display: inline-block;
   height:50%;
-  margin-left: 100px;
+  margin-left: 3rem;
   padding:0;
+  margin-bottom:20px;
 }
 
 .subnav-hero-subnav li {
