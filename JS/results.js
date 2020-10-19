@@ -3,7 +3,7 @@ $(document).ready(function() {
     let recipesArr = JSON.parse(localStorage.getItem("recipes-list")) || [];
     console.log(recipesArr);
 
-    if (recipesArr) {
+    if (recipesArr.length > 0) {
 
         for (let i = 0; i < recipesArr.length; i++) {
             // Takes information from the response and populates in a table on the results page
@@ -45,6 +45,14 @@ $(document).ready(function() {
 
             console.log("working");
         }
+    }
+
+    else {
+        let header = $("<h1>");
+        header.addClass("results-head");
+        header.text("No results found");
+        $(".backtosearch").append(header);
+        console.log("here");
     }
 
     const savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];

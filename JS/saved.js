@@ -36,7 +36,7 @@ $(document).ready(function() {
         let title = $("<h6>").addClass("saved-head");
         title.text(array.label);
         innerDiv.append(title);
-        // cardLink.attr(`data-${array.label}`);
+        
         cardLink.attr("data-label", array.label);
         
         let close = $("<span>").addClass("card-close").text("x");
@@ -72,7 +72,7 @@ $(document).ready(function() {
         console.log(recipeurl);
         let documentName = $(this).siblings("h6").text();
         console.log(documentName);
-        let pdfurl = "http://api.pdflayer.com/api/convert?access_key=fc89c18463a3601f09f7161ad08a5e5b&document_url=" + recipeurl + "&document_name=" + documentName + "&test=1";
+        let pdfurl = `http://api.pdflayer.com/api/convert?access_key=fc89c18463a3601f09f7161ad08a5e5b&document_url=${recipeurl}&document_name=${documentName}&test=1`;
 
         window.open(pdfurl, '_blank');
     };
