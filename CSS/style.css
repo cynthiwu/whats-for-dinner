@@ -31,6 +31,20 @@
   width: 100%;
 }
 
+.logo-left {
+  display: inline-block;
+  height:50%;
+  margin-right: 100px;
+  padding:0;
+}
+
+.logo-right {
+  display: inline-block;
+  height:50%;
+  margin-left: 100px;
+  padding:0;
+}
+
 .subnav-hero-subnav li {
   float: none;
   display: inline-block;
@@ -54,6 +68,7 @@
 .subnav-hero-subnav li a:hover {
   background: rgba(254, 254, 254, 0.15);
 }
+
 
 /* Search Section */ 
 
