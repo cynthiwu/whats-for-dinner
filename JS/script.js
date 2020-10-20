@@ -30,19 +30,23 @@ $(document).ready(function() {
         
         for (let i=0; i < clearIngred.length; i++) {
             if (searchTitle === clearIngred[i]) {
-                clearIngred.splice(i,1);
+                clearIngred.splice(i, 1);
                 localStorage.setItem("ingredients-list", JSON.stringify(clearIngred));
                 console.log(clearIngred);
                 console.log("Hello");
-            }
+                $(this).parent().remove();  
 
-            $(this).parent().remove();  
-        }   
-    }
+            }
+        }  
+    };
 
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
-        
+        if ($("#form-input").val() === "") {
+            return
+        }
+
+        else {
         let ingredientsArr = JSON.parse(localStorage.getItem("ingredients-list"));
         event.preventDefault() || [];
         
@@ -67,6 +71,8 @@ $(document).ready(function() {
 
         // Clears search bar 
         $("#form-input").val("");
+        }
+
     });
 
     $(".switch-input").on("change", function(event) {
@@ -118,6 +124,7 @@ $(document).ready(function() {
 
         // Run searchRecipe function for items in ingredients list
         searchRecipe(ingredientSearch);
+
     });
 
     // On click to find random "taco tuesday" recipe using the searchRecipe function
@@ -139,26 +146,4 @@ $(document).ready(function() {
         
         console.log(randomIndex);
     });
-
-    // GIVEN this website
-    // WHEN I search using ingredients on hand
-    // THEN I am given a list of possible recipes using those ingredients
-
-    // WHEN I find a recipe I like
-    // THEN I can save it to a list of favorite recipes
-
-    // WHEN I want to save the recipe locally
-    // THEN I can click a button to convert the HTML page to PDF 
-
-    // WHEN I click the dice
-    // THEN I am presented with a random recipe
-
-    // WHEN I click the taco
-    // THEN I am presented with taco tuesday
-    // ----------------------------------------------------------------------------------------------
-    // WHEN I find a recipe
-    // THEN I can add it to a weekly meal calendar
-
-    // WHEN I don’t have an ingredient
-    // THEN I can add it to a shopping list
 })

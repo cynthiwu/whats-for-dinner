@@ -21,10 +21,10 @@ The goal of this project was to create an application that will lift some of the
 <hr>
 
 ![Search Page Preview](./Assets/index.png)
-<br>
+<hr>
 
 ![Results Page Preview](./Assets/results.png)
-<br>
+<hr>
 
 ![Saved Page Preview](./Assets/saved.png)
 
