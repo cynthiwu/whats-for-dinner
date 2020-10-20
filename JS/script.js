@@ -43,7 +43,7 @@ $(document).ready(function() {
     // Takes user input ingredient and puts it into an unordered list
     $("#add-button").on("click", function(event) {
         if ($("#form-input").val() === "") {
-            return
+           $(".search").effect( "shake", {times:4}, 1000 );
         }
 
         else {
