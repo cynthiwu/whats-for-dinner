@@ -3,10 +3,10 @@ $(document).ready(function() {
     let recipesArr = JSON.parse(localStorage.getItem("recipes-list")) || [];
     console.log(recipesArr);
 
-    if (recipesArr) {
+    if (recipesArr.length > 0) {
 
         for (let i = 0; i < recipesArr.length; i++) {
-            // response calls
+            // Takes information from the response and populates in a table on the results page
             let recipeImg = $("<img>").attr("src", recipesArr[i].recipe.image).addClass("thumbnail");
            
             let imageEl = $("<td>").append(recipeImg);
@@ -19,16 +19,19 @@ $(document).ready(function() {
                 cookTime.text("N/A");
             }
             let servingSize = $("<td>").text(recipesArr[i].recipe.yield);
-            let recipeLink = $("<a>").attr("href", recipesArr[i].recipe.url).attr("target", "_blank").html(recipesArr[i].recipe.url);
+            let recipeLink = $("<a>").attr("href", recipesArr[i].recipe.url).attr("target", "_blank").html(recipesArr[i].recipe.source + " : " + recipesArr[i].recipe.label);
             recipeLink.addClass("recipeLink");
             let linkEl = $("<td>").append(recipeLink);
             linkEl.addClass("linkRow");
-            let saveBtnEl = $("<td>").attr("type", "button").attr("class", "primary button").text("Save");
+            let saveBtnEl = $("<td>").attr("type", "button").attr("class", "primary button save").text("Save");
             saveBtnEl.on("click", saveRecipe);
+            saveBtnEl.on("click", function(){
+                $(saveBtnEl).attr("class", "saved").text("Saved");
+            });
 
             console.log(recipesArr[i].recipe.url);
 
-            // html establishment
+            // Establish results table
             let tableRowEl = $("<tr>");
             
             $("#table-body").append(tableRowEl);
@@ -39,14 +42,22 @@ $(document).ready(function() {
             tableRowEl.append(servingSize);
             tableRowEl.append(linkEl);
             tableRowEl.append(saveBtnEl);
-            
 
             console.log("working");
         }
     }
 
-    const savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
+    else {
+        let header = $("<h1>");
+        header.addClass("results-head");
+        header.text("No results found");
+        $(".backtosearch").append(header);
+        console.log("here");
+    }
 
+    const savedArr = JSON.parse(localStorage.getItem("saved-recipes")) || [];
+    
+    // Function to save the recipe
     function saveRecipe() {
         let title = $(this).siblings(".recipeTitle").text();
         let time = $(this).siblings(".cooktime").text();
@@ -60,8 +71,14 @@ $(document).ready(function() {
         
         savedArr.push({label: title, totalTime: time, img: image, url: link});
         localStorage.setItem("saved-recipes", JSON.stringify(savedArr));
-
         console.log(savedArr);
     }
+
+    $(".clear-button").on("click", function() {
+
+        location.href = "../index.html";
+       
+    });
+
 
 })
