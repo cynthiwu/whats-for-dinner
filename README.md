@@ -10,8 +10,8 @@ View it live on [github-pages](https://cynthiwu.github.io/whats-for-dinner/)
     - [Acceptance Criteria](#acceptance-criteria)
 - [Usage](#usage)
   - [Demo](#demo)
+- [Future Development](#future-development)
 - [Built With](#built-with)
-- [Contributing](#contributing)
 - [Contact](#contact)
 
 
@@ -75,6 +75,22 @@ This project can be used by anyone has an assortment of ingredients on-hand, but
 Watch the gif below to see how the quiz works. 
 
 ![What's for Dinner? Demo](./Assets/whatsfordinner.gif)
+
+## Future Development
+
+The below includes features that this project group would like to include:
+
+* Weekly calendar to insert recipes into for meal planning
+* Shopping list based off ingredients you don’t have
+* Saved categories to organize by meal time or type; rating system
+* Search categories or ways to sort results including, but not limited to: 
+* Recipe ingredients, Recipe category, Calories, Recipe time
+* Add see more option at the bottom to show more than 10 results
+* Save buttons to shadow out as opposed to entire block
+* Cleaner results UI that is more compact and easy to consume
+* Movable Cards on the Saved Page, so user can reorganize 
+* Auto-complete search recommendations 
+* Reduced speed of search
 
 ## Built With
 
